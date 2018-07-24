@@ -1,4 +1,4 @@
-# restapi-iperf3
+# restapi-iperf3 - UNDER DEVELOPMENT
 
 1. Run the API Server APP and run in background: 
   python iperf3_api.py &
