@@ -48,7 +48,7 @@ def create_server():
     return make_response(jsonify(_success(request.data)), 201)
 
 
-@app.route("/server/<name>/run", methods=['POST', 'PATCH'])
+@app.route("/server/<name>/run", methods=['POST'])
 def run_server(name):
     try:
         server = _servers.get_connection(str(name))
@@ -84,7 +84,7 @@ def create_client():
     return make_response(jsonify(_success(request.data)), 201)
 
 
-@app.route("/client/<name>/run", methods=['POST', 'PATCH'])
+@app.route("/client/<name>/run", methods=['POST'])
 def run_client(name):
     try:
         client = _clients.get_connection(str(name))
