@@ -1,4 +1,5 @@
 # restapi-iperf3 - UNDER DEVELOPMENT
+0. To install : python setup.py install
 
 1. Run the API Server APP and run in background: 
   python run.py &
