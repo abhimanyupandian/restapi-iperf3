@@ -23,7 +23,7 @@ class Cache(object):
         """
         try:
             return self._aliases[str(alias)]
-        except ValueError:
+        except KeyError:
             raise RuntimeError("Non-existing alias/component '%s'."
                                % alias)
 
