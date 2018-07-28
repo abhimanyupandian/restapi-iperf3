@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 
 import sys
-from os.path import join, dirname
+
 from setuptools import setup
+from os.path import join, dirname
+from src.iPerf3RestApi.version import VERSION
 
 sys.path.append(join(dirname(__file__), 'src'))
 
-execfile(join(dirname(__file__), 'src', 'iPerf3RestApi', 'version.py'))
+src = join(dirname(__file__), 'src', 'iPerf3RestApi', 'version.py')
+exec(compile(open(src, "rb").read(), src, 'exec'), globals(), locals())
+
 
 DESCRIPTION = """
 iPerf3RestApi is a Rest API Client for Iperf3.
@@ -32,7 +36,6 @@ setup(name         = 'restapi-iperf3',
           "Topic :: Software Development :: Testing"
       ],
       install_requires = [
-          'robotframework >= 2.6.0',
           'iperf3 >= 0.1.10',
           'flask >= 1.0.2'
       ],
